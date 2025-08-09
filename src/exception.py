@@ -1,6 +1,7 @@
 import sys
 import logging
-import logger
+from src.logger import logging
+
 def error_message_detailed(error ,error_detail:sys):
     _,_, exc_tb = sys.exc_info()
     error_message ='Error occurred in script: [{0}] at line number: [{1}] with message: [{2}]'.format(
@@ -18,3 +19,5 @@ class CustomException(Exception):
         return self.error_message
     
 
+if __name__=='__main__':
+    logging.info('hello again')
