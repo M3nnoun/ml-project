@@ -1,14 +1,23 @@
-version: 0.2
+version: 0.2  # Current as of 2025
 phases:
   install:
     runtime-versions:
-      python: 3.9
+      python: 3.12  # Match your EB platform
     commands:
       - pip install --upgrade pip
-      - pip install -r requirements.txt
+  pre_build:
+    commands:
+      - pip install -r requirements.txt  # Installs Flask, gunicorn, pandas, etc.
+      # Optional: Run tests: pytest tests/ or python -m unittest
   build:
     commands:
-      - echo "Build completed"
+      - echo Build complete
+  post_build:
+    commands:
+      - echo Deploy ready
 artifacts:
-  files:
-    - '**/*'
+  files: '**/*'  # Includes everything for EB (app.py, model.pkl, etc.)
+  exclude-paths:  # Skip unnecessary files
+    - 'venv/**'
+    - '__pycache__/**'
+    - '.git/**'
