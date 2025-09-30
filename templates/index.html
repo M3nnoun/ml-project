@@ -1,11 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Math Score Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Optional: subtle hover scale effect for extra polish */
+        .predict-btn {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .predict-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
-<body>
-    <h1>Hello from index</h1>
+<body class="bg-gray-100 font-sans text-gray-800">
+
+    <header class="bg-green-600 text-white py-6 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold">Student Math Score Prediction Project</h1>
+    </header>
+
+    <nav class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6 py-3">
+                <li><a href="#" class="hover:text-green-300">Home</a></li>
+                <li><a href="/predict" class="hover:text-green-300 font-medium">Predict</a></li>
+                <li><a href="#dataset" class="hover:text-green-300">Dataset</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg mt-8 max-w-4xl">
+        <section id="introduction" class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-semibold text-green-600 mb-4">Welcome to the Student Math Score Prediction Project</h2>
+            <p class="mb-4">
+                This project uses machine learning to predict students' math scores based on various demographic and academic factors. By analyzing data from student performance datasets, we aim to provide insights into what influences math performance and offer a tool for predictions.
+            </p>
+            <p class="mb-6">
+                Whether you're an educator, student, or researcher, this tool can help understand patterns in student achievements and potentially guide interventions for better outcomes.
+            </p>
+
+            <!-- ✅ PROMINENT PREDICT BUTTON -->
+            <div class="text-center my-8">
+                <a
+                    href="/predict"
+                    class="predict-btn inline-block bg-green-600 hover:bg-green-700 text-white font-bold text-lg md:text-xl px-8 py-4 rounded-lg shadow-lg"
+                >
+                    🎯 Predict Math Score
+                </a>
+                <p class="text-sm text-gray-500 mt-2">Click here to try the prediction tool</p>
+            </div>
+
+            <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mb-6" role="alert">
+                <p class="font-bold">Important Note</p>
+                <p>The main focus of this project is not solely to build a model for prediction. Instead, the emphasis is on creating an end-to-end project, shipping it, and deploying it to production.</p>
+            </div>
+        </section>
+
+        <section id="dataset" class="border-t pt-8">
+            <h2 class="text-2xl md:text-3xl font-semibold text-green-600 mb-4">About the Dataset</h2>
+            <p class="mb-4">The dataset used in this project includes information on student demographics and performance in exams. Key features include:</p>
+            <ul class="list-disc pl-6 mb-4 space-y-1">
+                <li><strong>Gender</strong>: Sex of students (Male/Female)</li>
+                <li><strong>Race/Ethnicity</strong>: Ethnicity of students (Group A, B, C, D, E)</li>
+                <li><strong>Parental Level of Education</strong>: Parents' final education</li>
+                <li><strong>Lunch</strong>: Standard or Free/Reduced</li>
+                <li><strong>Test Preparation Course</strong>: Complete or Not complete</li>
+                <li><strong>Math, Reading, Writing Scores</strong></li>
+            </ul>
+            <p class="mb-4">Explore or download the dataset on Kaggle:</p>
+            <a
+                href="https://www.kaggle.com/datasets/spscientist/students-performance-in-exams"
+                class="inline-block bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded font-medium transition"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📥 Download Dataset from Kaggle
+            </a>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-12">
+        <p>&copy; 2025 Student Math Score Prediction Project. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
